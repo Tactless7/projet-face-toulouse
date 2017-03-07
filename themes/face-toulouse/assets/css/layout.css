@@ -1,0 +1,52 @@
+body {
+  font-family: 'PT Serif', serif;
+}
+
+/* Top-bar */
+
+.container-fluid.top {
+  background-color: #00898F;
+}
+
+.top-social {
+  padding-top: 1vh;
+}
+
+.logo-punchline {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-face {
+  width: 300px;
+}
+
+.punchline-div {
+  display: flex;
+}
+
+.punchline {
+  font-size: 1.9em;
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+  color: #00898F;
+  /*color: rgb(18, 180, 194);*/
+   /*color : rgb(108, 172, 228); */
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-inline {
+  margin-right: 1vw;
+  border-right: 1px solid white;
+}
+
+i, li, .top-number{
+  color: white;
+}
+
+/* Nav-bar */
