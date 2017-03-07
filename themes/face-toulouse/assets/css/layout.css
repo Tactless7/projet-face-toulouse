@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Goudy'; /*a name to be used later*/
+  src: url("/themes/face-toulouse/assets/fonts/Goudy-Catalogue-MT-Std-Regular.otf"); /*URL to font*/
+}
+
 body {
   font-family: 'PT Serif', serif;
 }
@@ -26,13 +31,13 @@ body {
 }
 
 .punchline {
-  font-size: 1.9em;
+  font-family: 'Goudy';
+  font-size: 2em;
   text-align: center;
   font-style: italic;
   margin: auto;
+
   color: #00898F;
-  /*color: rgb(18, 180, 194);*/
-   /*color : rgb(108, 172, 228); */
 }
 
 .social {
@@ -50,3 +55,23 @@ i, li, .top-number{
 }
 
 /* Nav-bar */
+
+.navbar {
+  background-color: transparent;
+}
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+.navbar-nav  > .menu-item {
+    float: none;
+    display: inline-block;
+    font-size: 1.4em;
+    border-bottom: solid 0.6vh transparent;
+  }
+
+.menu-item:hover {
+  border-bottom: solid 0.6vh #f2a472;
+  background-color: white;
+}
