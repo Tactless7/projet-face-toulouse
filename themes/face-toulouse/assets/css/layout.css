@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'Goudy'; /*a name to be used later*/
-  src: url("/themes/face-toulouse/assets/fonts/Goudy-Catalogue-MT-Std-Regular.otf"); /*URL to font*/
-}
+
 
 body {
   font-family: 'PT Serif', serif;
@@ -31,8 +28,7 @@ body {
 }
 
 .punchline {
-  font-family: 'Goudy';
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
   font-style: italic;
   margin: auto;
