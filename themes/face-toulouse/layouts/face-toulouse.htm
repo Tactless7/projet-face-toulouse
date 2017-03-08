@@ -1,3 +1,6 @@
+description = "FACE Toulouse"
+
+[staticPage]
 ==
 <!doctype html>
 <html lang="en">
@@ -16,10 +19,11 @@
 
   {% partial 'nav-bar' %}
 
-  {% page %}
+  <div class="container">
+    {% page %}
+  </div>
 
   {% partial 'footer' %}
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
