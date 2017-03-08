@@ -1,0 +1,6 @@
+plugin:
+    name: 'tactless.members::lang.plugin.name'
+    description: 'tactless.members::lang.plugin.description'
+    author: Tactless
+    icon: oc-icon-briefcase
+    homepage: ''
