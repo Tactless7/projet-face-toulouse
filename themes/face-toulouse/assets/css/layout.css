@@ -41,7 +41,7 @@ body {
   flex-direction: row;
 }
 
-.list-inline {
+.list-inline.social-top {
   margin-right: 1vw;
   border-right: 1px solid white;
 }
@@ -70,4 +70,56 @@ i, li, .top-number{
 .menu-item:hover {
   border-bottom: solid 0.6vh #f2a472;
   background-color: white;
+}
+
+/* Footer */
+
+footer.footer {
+  background-color: #00898F;
+}
+
+.row-footer {
+  display: flex;
+  min-height: 10vh;
+  padding: 1vh 0;
+}
+
+.row-footer > div {
+  display: flex;
+}
+
+.bottom-aligned {
+  align-items: flex-end;
+}
+
+.middle-aligned {
+  align-items: center;
+}
+
+.center-aligned {
+  justify-content: center;
+}
+
+.made-by {
+  font-size: 0.9em;
+}
+
+ .made-by, .copyright , .links > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+.copyright:hover, .links > li > a:hover{
+  color: #e7e7e7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links > li {
+  list-style-type: none;
+  font-size: 1.1em;
+}
+
+.social > ul > li > a > i:hover {
+  transform: scale(1.2);
 }
