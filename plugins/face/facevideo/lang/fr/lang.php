@@ -1,6 +1,6 @@
 <?php return [
     'plugin' => [
-        'name' => 'videos',
+        'name' => 'face-video',
         'description' => ''
     ]
 ];

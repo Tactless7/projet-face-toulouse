@@ -1,0 +1,4 @@
+title: Videos
+modelClass: Face\FaceVideo\Models\Facevideo
+toolbar:
+    buttons: reorder_toolbar

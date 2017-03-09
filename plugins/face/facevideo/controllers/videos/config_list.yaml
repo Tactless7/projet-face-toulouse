@@ -1,0 +1,11 @@
+title: Videos
+modelClass: Face\FaceVideo\Models\Facevideo
+list: $/face/facevideo/models/facevideo/columns.yaml
+recordUrl: 'face/facevideo/videos/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

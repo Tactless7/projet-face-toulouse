@@ -1,0 +1,11 @@
+plugin:
+    name: 'face.facevideo::lang.plugin.name'
+    description: 'face.facevideo::lang.plugin.description'
+    author: face
+    icon: oc-icon-eye
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Vidéos
+        url: face/facevideo/videos
+        icon: icon-video-camera

@@ -1,4 +1,4 @@
-<?php namespace face\Videos;
+<?php namespace Face\FaceVideo;
 
 use System\Classes\PluginBase;
 
