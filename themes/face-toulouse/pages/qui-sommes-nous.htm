@@ -20,11 +20,13 @@ pageNumber = "{{ :page }}"
 {% set detailsUrlParameter = memberList.detailsUrlParameter %}
 
 <div class="record-list">
+    <h2><i class="fa fa-briefcase"></i> Qui sommes-nous ?</h2>
+
+    <h3 class="role">Conseil d'administration</h3>
     <div class="boarding row">
-        <h3>Conseil d'administration</h3>
-            {% for record in records %}
+        {% for record in records %}
                 {% if record.role == 'board' %}
-                <div class="col-sm-3">
+                <div class="col-sm-3 member-item">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
@@ -50,11 +52,11 @@ pageNumber = "{{ :page }}"
                 {% endif %}
             {% endfor %}
     </div>
+    <h3 class="role">Equipe</h3>
     <div class="staff row">
-        <h3>Equipe</h3>
             {% for record in records %}
                 {% if record.role == 'staff' %}
-                <div class="col-sm-3" style="min-height: 50vh;">
+                <div class="col-sm-3 member-item">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
