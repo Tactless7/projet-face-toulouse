@@ -46,7 +46,7 @@ body {
   border-right: 1px solid white;
 }
 
-.social > i, .social > li, .top-number{
+.white-social, .social > li, .top-number{
   color: white;
 }
 
