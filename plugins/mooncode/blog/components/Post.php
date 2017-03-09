@@ -59,7 +59,7 @@ class Post extends ComponentBase
 
         $post = new BlogPost;
 
-        $post = $post->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
+        $post = $post->isClassExtendedWith('Mooncode.Translate.Behaviors.TranslatableModel')
             ? $post->transWhere('slug', $slug)
             : $post->where('slug', $slug);
 

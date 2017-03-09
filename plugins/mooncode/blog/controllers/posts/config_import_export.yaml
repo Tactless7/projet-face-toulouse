@@ -13,7 +13,7 @@ import:
     form: $/mooncode/blog/models/postimport/fields.yaml
 
     # Import Model class
-    modelClass: RainLab\Blog\Models\PostImport
+    modelClass: Mooncode\Blog\Models\PostImport
 
     # Redirect when finished
     redirect: mooncode/blog/posts
@@ -32,7 +32,7 @@ export:
     list: $/mooncode/blog/models/postexport/columns.yaml
 
     # Export Model class
-    modelClass: RainLab\Blog\Models\PostExport
+    modelClass: Mooncode\Blog\Models\PostExport
 
     # Redirect when finished
     redirect: mooncode/blog/posts

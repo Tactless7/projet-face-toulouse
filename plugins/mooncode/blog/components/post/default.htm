@@ -1,7 +1,11 @@
 {% set post = __SELF__.post %}
 
-<div class="content">{{ post.content_html|raw }}</div>
+<div class="container">
+    <h3 class="blogTitle-page-header"><a class="titre" href="{{ post.url }}">{{ post.title }}</a></h3>
+    <div class="content">{{ post.content_html|raw }}</div>
 
+<!-- <div class="content">{{ post.content_html|raw }}</div>
+ -->
 {% if post.featured_images.count %}
     <div class="featured-images text-center">
         {% for image in post.featured_images %}
@@ -16,12 +20,14 @@
     </div>
 {% endif %}
 
-<p class="info">
-    Posted
-    {% if post.categories.count %} in
-        {% for category in post.categories %}
-            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    {% endif %}
-    on {{ post.published_at|date('M d, Y') }}
-</p>
+    <p class="info">
+        Posté
+        {% if post.categories.count %} in
+            {% for category in post.categories %}
+                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+        le {{ post.published_at|date('d M, Y') }}
+    </p>
+    <a class="btn btn-primary" href="/posts"><span class="glyphicon glyphicon-chevron-left"></span>Retour aux actualités </a>
+</div>

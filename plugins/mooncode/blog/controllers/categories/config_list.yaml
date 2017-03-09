@@ -6,7 +6,7 @@
 list: ~/plugins/mooncode/blog/models/category/columns.yaml
 
 # Model Class name
-modelClass: RainLab\Blog\Models\Category
+modelClass: Mooncode\Blog\Models\Category
 
 # List Title
 title: mooncode.blog::lang.categories.list_title

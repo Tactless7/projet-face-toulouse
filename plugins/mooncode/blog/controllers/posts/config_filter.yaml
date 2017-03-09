@@ -10,7 +10,7 @@ scopes:
         label: mooncode.blog::lang.posts.filter_category
 
         # Model Class name
-        modelClass: RainLab\Blog\Models\Category
+        modelClass: Mooncode\Blog\Models\Category
 
         # Model attribute to display for the name
         nameFrom: name

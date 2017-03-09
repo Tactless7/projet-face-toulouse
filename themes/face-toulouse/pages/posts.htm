@@ -1,0 +1,14 @@
+title = "Actualités"
+url = "/posts/:page?"
+layout = "face-toulouse"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 2
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "home"
+postPage = "post"
+==
+{% component 'blogPosts' %}

@@ -9,7 +9,7 @@ title: mooncode.blog::lang.category.reorder
 nameFrom: name
 
 # Model Class name
-modelClass: RainLab\Blog\Models\Category
+modelClass: Mooncode\Blog\Models\Category
 
 # Toolbar widget configuration
 toolbar:

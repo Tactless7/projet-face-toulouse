@@ -4,7 +4,7 @@
 
 name: mooncode.blog::lang.blog.create_category
 form: ~/plugins/mooncode/blog/models/category/fields.yaml
-modelClass: RainLab\Blog\Models\Category
+modelClass: Mooncode\Blog\Models\Category
 defaultRedirect: mooncode/blog/categories
 
 create:
