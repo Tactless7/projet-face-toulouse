@@ -20,11 +20,11 @@ pageNumber = "{{ :page }}"
 {% set detailsUrlParameter = memberList.detailsUrlParameter %}
 
 <div class="record-list">
-    <div class="boarding">
+    <div class="boarding row">
         <h3>Conseil d'administration</h3>
             {% for record in records %}
                 {% if record.role == 'board' %}
-                <div>
+                <div class="col-sm-4">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
@@ -32,10 +32,10 @@ pageNumber = "{{ :page }}"
 
                     <h5>{{ record.job }}</h5>
                     {% if record.phone%}
-                        <span><i class="fa fa-phone"></i> {{ record.phone }} </span>
+                        <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
                     {% endif %}
                     {% if record.email %}
-                        <span><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></span>
+                        <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
                     {% endif %}
 
                     {% endspaceless %}
@@ -43,11 +43,11 @@ pageNumber = "{{ :page }}"
                 {% endif %}
             {% endfor %}
     </div>
-    <div class="staff">
+    <div class="staff row">
         <h3>Equipe</h3>
             {% for record in records %}
                 {% if record.role == 'staff' %}
-                <div>
+                <div class="col-sm-4">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
@@ -55,9 +55,9 @@ pageNumber = "{{ :page }}"
 
                     <h5>{{ record.job }}</h5>
                     {% if record.phone%}
-                        <span><i class="fa fa-phone"></i> {{ record.phone }} </span>
+                        <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
                     {% endif %}
-                    <span><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></span>
+                    <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
 
                     {% endspaceless %}
                 </div>
