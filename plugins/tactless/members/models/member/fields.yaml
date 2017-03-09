@@ -1,0 +1,44 @@
+fields:
+    first_name:
+        label: 'tactless.members::lang.plugin.first_name'
+        oc.commentPosition: ''
+        span: full
+        placeholder: 'tactless.members::lang.plugin.first_name'
+        required: 1
+        type: text
+    last_name:
+        label: 'tactless.members::lang.plugin.last_name'
+        oc.commentPosition: ''
+        span: full
+        placeholder: 'tactless.members::lang.plugin.last_name'
+        required: 1
+        type: text
+    job:
+        label: 'tactless.members::lang.plugin.job'
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'tactless.members::lang.plugin.job'
+        required: 1
+        type: text
+    role:
+        label: 'tactless.members::lang.plugin.role'
+        oc.commentPosition: ''
+        options:
+            board: 'Conseil d''Administration'
+            staff: Equipe
+        span: auto
+        placeholder: 'tactless.members::lang.plugin.role'
+        required: 1
+        type: dropdown
+    phone:
+        label: 'tactless.members::lang.plugin.phone'
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'tactless.members::lang.plugin.phone'
+        type: text
+    email:
+        label: 'tactless.members::lang.plugin.email'
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'tactless.members::lang.plugin.email'
+        type: text
