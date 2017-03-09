@@ -26,16 +26,16 @@ pageNumber = "{{ :page }}"
     <div class="boarding row">
         {% for record in records %}
                 {% if record.role == 'board' %}
-                <div class="col-sm-3 member-item">
+                <div class="col-sm-3 col-xs-6 member-item">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
                     <div>
-                        <img class="img-circle" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <img class="img-circle portrait" src="https://unsplash.it/400/400/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
                         <div class="caption">
                             <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
-                            <h5>{{ record.job }}</h5>
+                            <h5 class="job">{{ record.job }}</h5>
 
                             {% if record.phone%}
                             <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
@@ -56,16 +56,16 @@ pageNumber = "{{ :page }}"
     <div class="staff row">
             {% for record in records %}
                 {% if record.role == 'staff' %}
-                <div class="col-sm-3 member-item">
+                <div class="col-sm-3 col-xs-6 member-item">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
                     <div>
-                        <img class="img-circle" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <img class="img-circle portrait" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
                         <div class="caption">
                             <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
-                            <h5>{{ record.job }}</h5>
+                            <h5 class="job">{{ record.job }}</h5>
 
                             {% if record.phone%}
                             <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
