@@ -24,19 +24,26 @@ pageNumber = "{{ :page }}"
         <h3>Conseil d'administration</h3>
             {% for record in records %}
                 {% if record.role == 'board' %}
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
-                    <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
+                    <div>
+                        <img class="img-circle" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <div class="caption">
+                            <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
-                    <h5>{{ record.job }}</h5>
-                    {% if record.phone%}
-                        <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
-                    {% endif %}
-                    {% if record.email %}
-                        <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
-                    {% endif %}
+                            <h5>{{ record.job }}</h5>
+
+                            {% if record.phone%}
+                            <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
+                            {% endif %}
+
+                            {% if record.email %}
+                            <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                            {% endif %}
+                        </div>
+                    </div>
 
                     {% endspaceless %}
                 </div>
@@ -47,19 +54,26 @@ pageNumber = "{{ :page }}"
         <h3>Equipe</h3>
             {% for record in records %}
                 {% if record.role == 'staff' %}
-                <div class="col-sm-4">
+                <div class="col-sm-3" style="min-height: 50vh;">
                     {# Use spaceless tag to remove spaces inside the A tag. #}
                     {% spaceless %}
 
-                    <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
+                    <div>
+                        <img class="img-circle" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <div class="caption">
+                            <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
-                    <h5>{{ record.job }}</h5>
-                    {% if record.phone%}
-                        <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
-                    {% endif %}
-                    {% if record.email %}
-                        <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
-                    {% endif %}
+                            <h5>{{ record.job }}</h5>
+
+                            {% if record.phone%}
+                            <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
+                            {% endif %}
+
+                            {% if record.email %}
+                            <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                            {% endif %}
+                        </div>
+                    </div>
 
                     {% endspaceless %}
                 </div>
