@@ -57,7 +57,9 @@ pageNumber = "{{ :page }}"
                     {% if record.phone%}
                         <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
                     {% endif %}
-                    <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                    {% if record.email %}
+                        <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                    {% endif %}
 
                     {% endspaceless %}
                 </div>
