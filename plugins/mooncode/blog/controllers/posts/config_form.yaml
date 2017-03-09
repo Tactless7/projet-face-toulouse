@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: mooncode.blog::lang.blog.create_post
+form: ~/plugins/mooncode/blog/models/post/fields.yaml
+modelClass: RainLab\Blog\Models\Post
+defaultRedirect: mooncode/blog/posts
+
+create:
+    redirect: mooncode/blog/posts/update/:id
+    redirectClose: mooncode/blog/posts
+
+update:
+    redirect: mooncode/blog/posts
+    redirectClose: mooncode/blog/posts

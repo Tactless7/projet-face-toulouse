@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: mooncode.blog::lang.category.name
+        placeholder: mooncode.blog::lang.category.name_placeholder
+        span: left
+
+    slug:
+        label: mooncode.blog::lang.category.slug
+        span: right
+        placeholder: mooncode.blog::lang.category.slug_placeholder
+        preset: name
+
+    description:
+        label: 'mooncode.blog::lang.category.description'
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: textarea
