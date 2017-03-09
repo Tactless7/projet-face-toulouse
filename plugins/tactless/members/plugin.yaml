@@ -4,3 +4,8 @@ plugin:
     author: Tactless
     icon: oc-icon-briefcase
     homepage: ''
+navigation:
+    main-menu-item:
+        label: 'tactless.members::lang.plugin.plugin'
+        url: tactless/members/members
+        icon: icon-briefcase
