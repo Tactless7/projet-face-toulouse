@@ -1,0 +1,29 @@
+description = "FACE Toulouse"
+
+[staticPage]
+==
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FACE Grand Toulouse</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="/themes/face-toulouse/assets/css/layout.css">
+    <link rel="icon" type="image/png" href="/themes/face-toulouse/assets/img/favicon.png">
+</head>
+<body>
+
+	{% partial 'top-bar' %}
+
+  {% partial 'nav-bar' %}
+
+  <div class="container">
+    {% page %}
+  </div>
+
+  {% partial 'footer' %}
+
+</body>
+</html>
