@@ -20,29 +20,50 @@ pageNumber = "{{ :page }}"
 {% set detailsUrlParameter = memberList.detailsUrlParameter %}
 
 <div class="record-list">
-    {% for record in records %}
-        <div>
-            {# Use spaceless tag to remove spaces inside the A tag. #}
-            {% spaceless %}
-                {% if detailsPage %}
-                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+    <div class="boarding">
+        <h3>Conseil d'administration</h3>
+            {% for record in records %}
+                {% if record.role == 'board' %}
+                <div>
+                    {# Use spaceless tag to remove spaces inside the A tag. #}
+                    {% spaceless %}
+
+                    <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
+
+                    <h5>{{ record.job }}</h5>
+                    {% if record.phone%}
+                        <span><i class="fa fa-phone"></i> {{ record.phone }} </span>
+                    {% endif %}
+                    {% if record.email %}
+                        <span><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></span>
+                    {% endif %}
+
+                    {% endspaceless %}
+                </div>
                 {% endif %}
+            {% endfor %}
+    </div>
+    <div class="staff">
+        <h3>Equipe</h3>
+            {% for record in records %}
+                {% if record.role == 'staff' %}
+                <div>
+                    {# Use spaceless tag to remove spaces inside the A tag. #}
+                    {% spaceless %}
 
-                <h4>{{ record.first_name }} {{ record.last_name }}</h4>
+                    <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
-                {% if detailsPage %}
-                </a>
+                    <h5>{{ record.job }}</h5>
+                    {% if record.phone%}
+                        <span><i class="fa fa-phone"></i> {{ record.phone }} </span>
+                    {% endif %}
+                    <span><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></span>
+
+                    {% endspaceless %}
+                </div>
                 {% endif %}
-
-                <h5>{{ record.job }}</h5>
-                <span><i class="fa fa-phone"></i> {{ record.phone }} </span>
-                <span><i class="fa fa-at"></i> {{ record.email }} </span>
-
-            {% endspaceless %}
-        </div>
-    {% else %}
-        <div class="no-data">{{ noRecordsMessage }}</div>
-    {% endfor %}
+            {% endfor %}
+    </div>
 </div>
 
 {% if records.lastPage > 1 %}
