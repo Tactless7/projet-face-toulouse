@@ -15,15 +15,17 @@ description = "FACE Toulouse"
 </head>
 <body>
 
-	{% partial 'top-bar' %}
+  <div class="wrapper">
+  	{% partial 'top-bar' %}
 
-  {% partial 'nav-bar' %}
+    {% partial 'nav-bar' %}
 
-  <div class="container">
-    {% page %}
+    <div class="container">
+      {% page %}
+    </div>
+
+    {% partial 'footer' %}
   </div>
-
-  {% partial 'footer' %}
 
 </body>
 </html>
