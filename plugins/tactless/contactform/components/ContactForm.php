@@ -14,7 +14,7 @@ class ContactForm extends ComponentBase {
     }
 
     public function onSend(){
-        $vars = ['name' => Input::get('name'), 'email' => Input::get('email')];
+        $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'message' => Input::get('message')];
 
         Mail::send('acme.blog::mail.message', $vars, function($message) {
             $message->to('admin@domain.tld', 'FACE Toulouse');
