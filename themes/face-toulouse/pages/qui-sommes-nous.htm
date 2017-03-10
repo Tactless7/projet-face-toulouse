@@ -1,0 +1,103 @@
+title = "Qui sommes nous ?"
+url = "/about"
+layout = "face-toulouse"
+is_hidden = 0
+
+[builderList memberList]
+modelClass = "Tactless\Members\Models\Member"
+scope = "-"
+displayColumn = "first_name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = memberList.records %}
+{% set displayColumn = memberList.displayColumn %}
+{% set noRecordsMessage = memberList.noRecordsMessage %}
+{% set detailsPage = memberList.detailsPage %}
+{% set detailsKeyColumn = memberList.detailsKeyColumn %}
+{% set detailsUrlParameter = memberList.detailsUrlParameter %}
+
+<div class="record-list">
+    <h2>A propos de FACE Toulouse</h2>
+
+    <h3 class="role">Conseil d'administration</h3>
+    <div class="boarding row">
+        {% for record in records %}
+                {% if record.role == 'board' %}
+                <div class="col-sm-3 col-xs-6 member-item">
+                    {# Use spaceless tag to remove spaces inside the A tag. #}
+                    {% spaceless %}
+
+                    <div>
+                        <img class="img-circle portrait" src="{{ record.photo ? record.photo.thumb(200, 200, {'mode' : 'crop'}) : '/themes/face-toulouse/assets/img/roue.png' }}" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <div class="caption">
+                            <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
+
+                            <h5 class="job">{{ record.job }}</h5>
+
+                            {% if record.phone%}
+                            <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
+                            {% endif %}
+
+                            {% if record.email %}
+                            <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% endspaceless %}
+                </div>
+                {% endif %}
+            {% endfor %}
+    </div>
+    <h3 class="role">Equipe</h3>
+    <div class="staff row">
+            {% for record in records %}
+                {% if record.role == 'staff' %}
+                <div class="col-sm-3 col-xs-6 member-item">
+                    {# Use spaceless tag to remove spaces inside the A tag. #}
+                    {% spaceless %}
+
+                    <div>
+                        <img class="img-circle portrait" src="{{ record.photo ? record.photo.thumb(200, 200, {'mode' : 'crop'}) : '/themes/face-toulouse/assets/img/roue.png' }}" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <div class="caption">
+                            <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
+
+                            <h5 class="job">{{ record.job }}</h5>
+
+                            {% if record.phone%}
+                            <p><i class="fa fa-phone"></i> {{ record.phone }} </p>
+                            {% endif %}
+
+                            {% if record.email %}
+                            <p><i class="fa fa-at"></i><a href="mailto:{{record.email}}"> {{ record.email }} </a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% endspaceless %}
+                </div>
+                {% endif %}
+            {% endfor %}
+    </div>
+</div>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

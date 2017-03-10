@@ -1,0 +1,10 @@
+name: Members
+form: $/tactless/members/models/member/fields.yaml
+modelClass: Tactless\Members\Models\Member
+defaultRedirect: tactless/members/members
+create:
+    redirect: 'tactless/members/members/update/:id'
+    redirectClose: tactless/members/members
+update:
+    redirect: tactless/members/members
+    redirectClose: tactless/members/members
