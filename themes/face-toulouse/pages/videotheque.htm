@@ -1,0 +1,61 @@
+title = "videotheque"
+url = "/videos/:page?"
+layout = "face-toulouse"
+is_hidden = 0
+
+[builderList]
+modelClass = "Face\FaceVideo\Models\Facevideo"
+scope = "-"
+displayColumn = "link"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsKeyColumn = "l"
+detailsUrlParameter = "id"
+recordsPerPage = 4
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container">
+	<h2>VIDEOTHEQUE</h2>
+	{% for record in records %}
+	<div class="col-md-6">
+		{# Use spaceless tag to remove spaces inside the A tag. #}
+		{% spaceless %}
+		{% if detailsPage %}
+		<a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+			{% endif %}
+
+			<h2 class="titleVideo"> {{ record.title }}</h2>
+			<h4 class="descriptionVideo">{{ record.description }}</h4>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{record.link}}" frameborder="0" allowfullscreen></iframe>
+
+			{% if detailsPage %}
+		</a>
+		{% endif %}
+		{% endspaceless %}
+	</div>
+	
+	{% else %}
+	<div class="no-data">{{ noRecordsMessage }}</div>
+	{% endfor %}
+	{% if records.lastPage > 1 %}
+	<ul class="pagination">
+		{% if records.currentPage > 1 %}
+		<li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Précédent
+		</a></li>
+		{% endif %}
+
+		{% for page in 1..records.lastPage %}
+		<li class="{{ records.currentPage == page ? 'active' : null }}">
+			<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+</div>

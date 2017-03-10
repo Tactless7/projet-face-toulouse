@@ -1,6 +1,0 @@
-plugin:
-    name: 'face.videos::lang.plugin.name'
-    description: 'face.videos::lang.plugin.description'
-    author: face
-    icon: oc-icon-video-camera
-    homepage: ''

@@ -1,0 +1,10 @@
+name: Videos
+form: $/face/facevideo/models/facevideo/fields.yaml
+modelClass: Face\FaceVideo\Models\Facevideo
+defaultRedirect: face/facevideo/videos
+create:
+    redirect: 'face/facevideo/videos/update/:id'
+    redirectClose: face/facevideo/videos
+update:
+    redirect: face/facevideo/videos
+    redirectClose: face/facevideo/videos
