@@ -1,0 +1,48 @@
+{% set post = __SELF__.post %}
+
+<div class="container">
+    <div class="raw">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Actualités</h2>
+            <h3 class="blogTitle-page-header"><a class="titre" href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="info">
+                    Posté
+                    {% if post.categories.count %} in
+                        {% for category in post.categories %}
+                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    le {{ post.published_at|date('d M, Y') }}
+            </p>
+            <div class="content">{{ post.content_html|raw }}</div>
+            
+        {% if post.featured_images.count %}
+            <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 30vw" />
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %}
+            <a class="btn btn-link" href="/posts"><span class="glyphicon glyphicon-chevron-left"></span>Retour aux actualités </a>
+        </div>
+    </div>
+</div>
+<!--         {% if post.featured_images.count %}
+            <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 30vw" />
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %} -->

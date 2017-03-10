@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: mooncode.blog::lang.blog.create_category
+form: ~/plugins/mooncode/blog/models/category/fields.yaml
+modelClass: Mooncode\Blog\Models\Category
+defaultRedirect: mooncode/blog/categories
+
+create:
+    redirect: mooncode/blog/categories/update/:id
+    redirectClose: mooncode/blog/categories
+
+update:
+    redirect: mooncode/blog/categories
+    redirectClose: mooncode/blog/categories

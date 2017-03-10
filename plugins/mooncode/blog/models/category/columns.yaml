@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: mooncode.blog::lang.category.name
+        searchable: true
+
+    post_count:
+        label: mooncode.blog::lang.category.posts
+        sortable: false
