@@ -13,4 +13,14 @@ class ContactForm extends ComponentBase {
         ];
     }
 
+    public function onSend(){
+        $vars = ['name' => Input::get('name'), 'email' => Input::get('email')];
+
+        Mail::send('acme.blog::mail.message', $vars, function($message) {
+            $message->to('admin@domain.tld', 'FACE Toulouse');
+            $message->subject('Nouveau message du formulaire de contact');
+
+});
+    }
+
 }
