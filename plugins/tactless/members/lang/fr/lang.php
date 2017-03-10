@@ -9,5 +9,6 @@
         'phone' => 'Téléphone',
         'email' => 'Email',
         'plugin' => 'Equipe',
+        'photo' => 'Photo',
     ],
 ];

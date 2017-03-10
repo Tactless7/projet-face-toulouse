@@ -42,3 +42,16 @@ fields:
         span: auto
         placeholder: 'tactless.members::lang.plugin.email'
         type: text
+    photo:
+        label: 'tactless.members::lang.plugin.photo'
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        disabled: 0
+        type: fileupload

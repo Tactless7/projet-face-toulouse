@@ -8,7 +8,7 @@ use Model;
 class Member extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
@@ -23,4 +23,10 @@ class Member extends Model
      * @var string The database table used by the model.
      */
     public $table = 'tactless_members_';
+
+    /* Relations */
+
+    public $attachOne = [
+      'photo' => 'System\Models\File'
+    ];
 }

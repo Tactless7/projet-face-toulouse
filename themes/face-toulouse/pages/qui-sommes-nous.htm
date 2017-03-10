@@ -20,7 +20,7 @@ pageNumber = "{{ :page }}"
 {% set detailsUrlParameter = memberList.detailsUrlParameter %}
 
 <div class="record-list">
-    <h2><i class="fa fa-briefcase"></i> Qui sommes-nous ?</h2>
+    <h2>A propos de FACE Toulouse</h2>
 
     <h3 class="role">Conseil d'administration</h3>
     <div class="boarding row">
@@ -31,7 +31,7 @@ pageNumber = "{{ :page }}"
                     {% spaceless %}
 
                     <div>
-                        <img class="img-circle portrait" src="https://unsplash.it/400/400/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <img class="img-circle portrait" src="{{ record.photo ? record.photo.thumb(200, 200, {'mode' : 'crop'}) : '/themes/face-toulouse/assets/img/roue.png' }}" alt="Photo de {{record.first_name}} {{record.last_name}}">
                         <div class="caption">
                             <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
@@ -61,7 +61,7 @@ pageNumber = "{{ :page }}"
                     {% spaceless %}
 
                     <div>
-                        <img class="img-circle portrait" src="https://unsplash.it/200/200/?random" alt="Photo de {{record.first_name}} {{record.last_name}}">
+                        <img class="img-circle portrait" src="{{ record.photo ? record.photo.thumb(200, 200, {'mode' : 'crop'}) : '/themes/face-toulouse/assets/img/roue.png' }}" alt="Photo de {{record.first_name}} {{record.last_name}}">
                         <div class="caption">
                             <h4><strong>{{ record.first_name }} {{ record.last_name }}</strong></h4>
 
