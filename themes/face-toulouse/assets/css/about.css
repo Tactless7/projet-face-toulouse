@@ -1,3 +1,7 @@
+.presentation {
+  margin: 5vh 3vw;
+}
+
 .role {
   font-weight: bold;
   display:inline-block;
