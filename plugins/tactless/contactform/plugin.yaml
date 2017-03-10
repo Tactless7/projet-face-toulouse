@@ -1,0 +1,6 @@
+plugin:
+    name: 'tactless.contactform::lang.plugin.name'
+    description: 'tactless.contactform::lang.plugin.description'
+    author: Tactless
+    icon: oc-icon-envelope
+    homepage: ''
