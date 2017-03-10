@@ -1,0 +1,54 @@
+{% set posts = __SELF__.posts %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Actualités</h2>
+            {% for post in posts %}
+           
+            <h3 class="blogTitle-page-header"><a class= "titre" href="{{ post.url }}">{{ post.title }}</a></h3>
+
+            <p class="info">
+                Publié 
+                {% if post.categories.count %} in {% endif %}
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                
+                le {{ post.published_at|date('d M Y') }}
+            </p>
+
+            <p class="excerpt">{{ post.summary }}</p>
+            <a href="{{ post.url }}">Lire plus</a>
+      
+            {% else %}
+                <li class="no-data">{{ noPostsMessage }}</li>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            {% if posts.lastPage > 1 %}
+            <ul class="pagination">
+                {% if posts.currentPage > 1 %}
+                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Précedent</a></li>
+                {% endif %}
+                {% for page in 1..posts.lastPage %}
+                   <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                       <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                   </li>
+                {% endfor %}
+            </ul>
+                {% endif %}    
+        </div>
+    </div>  
+</div>
+<!-- 
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+    </ul>
+{% endif %} -->

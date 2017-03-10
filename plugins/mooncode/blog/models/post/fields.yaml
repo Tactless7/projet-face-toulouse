@@ -1,0 +1,71 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: mooncode.blog::lang.post.title
+        span: left
+        placeholder: mooncode.blog::lang.post.title_placeholder
+
+    slug:
+        label: mooncode.blog::lang.post.slug
+        span: right
+        placeholder: mooncode.blog::lang.post.slug_placeholder
+        preset:
+            field: title
+            type: slug
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    stretch: true
+    fields:
+        content:
+            tab: mooncode.blog::lang.post.tab_edit
+            type: Mooncode\Blog\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
+        categories:
+            tab: mooncode.blog::lang.post.tab_categories
+            type: relation
+            commentAbove: mooncode.blog::lang.post.categories_comment
+            placeholder: mooncode.blog::lang.post.categories_placeholder
+
+        published:
+            tab: mooncode.blog::lang.post.tab_manage
+            label: mooncode.blog::lang.post.published
+            span: left
+            type: checkbox
+
+        published_at:
+            tab: mooncode.blog::lang.post.tab_manage
+            label: mooncode.blog::lang.post.published_on
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+
+        excerpt:
+            tab: mooncode.blog::lang.post.tab_manage
+            label: mooncode.blog::lang.post.excerpt
+            type: textarea
+            size: small
+
+        featured_images:
+            tab: mooncode.blog::lang.post.tab_manage
+            label: mooncode.blog::lang.post.featured_images
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200

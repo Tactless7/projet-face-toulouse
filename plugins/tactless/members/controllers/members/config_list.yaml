@@ -1,0 +1,11 @@
+title: Members
+modelClass: Tactless\Members\Models\Member
+list: $/tactless/members/models/member/columns.yaml
+recordUrl: 'tactless/members/members/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

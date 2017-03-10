@@ -1,0 +1,30 @@
+.role {
+  font-weight: bold;
+  display:inline-block;
+  color: #00898F;
+  width: auto;
+  border-bottom: solid 0.2vh #e7e7e7;
+  margin-bottom: 5vh;
+  padding-bottom: 3vh;
+  padding-right: 4vw;
+}
+
+.member-item {
+  height: 45vh;
+  padding: 2vh 3vw;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.member-item > a {
+  color: grey;
+}
+
+.job {
+  font-size: 1.1em;
+}
+
+.portrait {
+  max-width: 200px;
+  max-height: 200px;
+}

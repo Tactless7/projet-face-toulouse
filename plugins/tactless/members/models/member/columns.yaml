@@ -1,0 +1,29 @@
+columns:
+    id:
+        label: id
+        type: number
+    first_name:
+        label: 'tactless.members::lang.plugin.first_name'
+        type: text
+        searchable: true
+        sortable: true
+    last_name:
+        label: 'tactless.members::lang.plugin.last_name'
+        type: text
+        searchable: true
+        sortable: true
+    job:
+        label: 'tactless.members::lang.plugin.job'
+        type: text
+        searchable: true
+        sortable: false
+    role:
+        label: 'tactless.members::lang.plugin.role'
+        type: text
+        sortable: true
+    phone:
+        label: 'tactless.members::lang.plugin.phone'
+        type: text
+    email:
+        label: 'tactless.members::lang.plugin.email'
+        type: text
