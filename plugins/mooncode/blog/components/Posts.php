@@ -164,6 +164,30 @@ class Posts extends ComponentBase
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
     }
 
+    public function lastPost()
+    {
+        $category = $this->category ? $this->category->id : null;
+
+        /*
+         * List all the posts, eager load their categories
+         */
+        $post = BlogPost::with('categories')->orderBy('published_at', 'desc')->first();
+
+        /*
+         * Add a "url" helper attribute for linking to each post and category
+         */
+
+           
+            $post->categories->each(function($category) {
+                $category->setUrl($this->categoryPage, $this->controller);
+            });
+
+            $post->url = '/post/'.str_slug($post->title);
+  
+
+        return $post;
+    }
+
     protected function listPosts()
     {
         $category = $this->category ? $this->category->id : null;
