@@ -3,8 +3,9 @@ iframe{
 }
 
 .titleVideo{
-	padding-top: 3em;
+	padding-top: 2em;
 	color:#777;
+	text-align: left;
 }
 .descriptionVideo{
 	color: #00898F;

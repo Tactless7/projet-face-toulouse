@@ -4,11 +4,18 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public function registerComponents()
-    {
-    }
+	public function registerComponents()
+	{
+		return
+		[
 
-    public function registerSettings()
-    {
-    }
+		'Face\FaceVideo\Components\LastVideo'=>'lastVideo'
+
+		];
+	}
+
+	public function registerSettings()
+	{
+
+	}
 }

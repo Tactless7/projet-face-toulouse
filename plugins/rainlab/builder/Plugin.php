@@ -23,7 +23,8 @@ class Plugin extends PluginBase
     {
         return [
             'RainLab\Builder\Components\RecordList'       => 'builderList',
-            'RainLab\Builder\Components\RecordDetails'    => 'builderDetails'
+            'RainLab\Builder\Components\RecordDetails'    => 'builderDetails',
+            // 'RainLab\Builder\Components\RecordLastVideos' => 'builderLastVideos'
         ];
     }
 
