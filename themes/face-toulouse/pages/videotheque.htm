@@ -22,7 +22,7 @@ pageNumber = "{{ :page }}"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 <div class="container">
-	<h2>VIDEOTHEQUE</h2>
+	<h2>Vidéothèque</h2>
 	{% for record in records %}
 	<div class="col-md-6">
 		{# Use spaceless tag to remove spaces inside the A tag. #}
@@ -31,7 +31,7 @@ pageNumber = "{{ :page }}"
 		<a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
 			{% endif %}
 
-			<h2 class="titleVideo"> {{ record.title }}</h2>
+			<h3 class="titleVideo"> {{ record.title }}</h3>
 			<h4 class="descriptionVideo">{{ record.description }}</h4>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{record.link}}" frameborder="0" allowfullscreen></iframe>
 
@@ -40,7 +40,7 @@ pageNumber = "{{ :page }}"
 		{% endif %}
 		{% endspaceless %}
 	</div>
-	
+
 	{% else %}
 	<div class="no-data">{{ noRecordsMessage }}</div>
 	{% endfor %}
