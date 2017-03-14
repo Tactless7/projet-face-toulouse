@@ -108,7 +108,7 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
     'to' => [
-        'address' => env('MAIL_USERNAME'),
+        'address' => env('MAIL_USERNAME', null),
         'name' => 'Message SiteWeb'
     ],
 
