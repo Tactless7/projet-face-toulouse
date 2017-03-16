@@ -29,12 +29,20 @@ pageNumber = "{{ :page }}"
 			{# Use spaceless tag to remove spaces inside the A tag. #}
 			{% spaceless %}
 
-			<h2 class="titleVideo"> {{ record.title }}</h2>
+			<h3 class="titleVideo"> {{ record.title }}</h3>
 			<h4 class="descriptionVideo">{{ record.description }}</h4>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{record.link}}" frameborder="0" allowfullscreen></iframe>
 
+<<<<<<< HEAD
 			{% endspaceless %}
 		</div>
+=======
+			{% if detailsPage %}
+		</a>
+		{% endif %}
+		{% endspaceless %}
+	</div>
+>>>>>>> fd74cf8d033f4e5d87111270e81dcabe7d258eb9
 
 	{% else %}
 	<div class="no-data">{{ noRecordsMessage }}</div>

@@ -19,8 +19,12 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = memberList.detailsKeyColumn %}
 {% set detailsUrlParameter = memberList.detailsUrlParameter %}
 
+
 <div class="record-list">
     <h2>A propos de FACE Toulouse</h2>
+    <div class="presentation">
+        {% content 'presentation' %}
+    </div>
 
     <h3 class="role">Conseil d'administration</h3>
     <div class="boarding row">
