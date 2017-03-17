@@ -2,18 +2,8 @@ title = "videotheque"
 url = "/videos/:page?"
 layout = "face-toulouse"
 is_hidden = 0
-
-[builderList]
-modelClass = "Face\FaceVideo\Models\Facevideo"
-scope = "-"
-displayColumn = "link"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsKeyColumn = "l"
-detailsUrlParameter = "id"
-recordsPerPage = 4
-pageNumber = "{{ :page }}"
 ==
+<?php
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
@@ -25,40 +15,15 @@ pageNumber = "{{ :page }}"
 	<h2>Vidéothèque</h2>
 	{% for record in records %}
 
-		<div class="col-md-6">
-			{# Use spaceless tag to remove spaces inside the A tag. #}
-			{% spaceless %}
+	<div class="col-md-6">
+		{# Use spaceless tag to remove spaces inside the A tag. #}
+		{% spaceless %}
 
-			<h3 class="titleVideo"> {{ record.title }}</h3>
-			<h4 class="descriptionVideo">{{ record.description }}</h4>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{record.link}}" frameborder="0" allowfullscreen></iframe>
+		<h3 class="titleVideo"> {{ record.title }}</h3>
+		<h4 class="descriptionVideo">{{ record.description }}</h4>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/{{record.link}}" frameborder="0" allowfullscreen></iframe>
 
-<<<<<<< HEAD
-			{% endspaceless %}
-		</div>
-=======
-			{% if detailsPage %}
-		</a>
-		{% endif %}
 		{% endspaceless %}
+	{%enfor%}
 	</div>
->>>>>>> fd74cf8d033f4e5d87111270e81dcabe7d258eb9
-
-	{% else %}
-	<div class="no-data">{{ noRecordsMessage }}</div>
-	{% endfor %}
-	{% if records.lastPage > 1 %}
-	<ul class="pagination">
-		{% if records.currentPage > 1 %}
-		<li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Précédent
-		</a></li>
-		{% endif %}
-
-		{% for page in 1..records.lastPage %}
-		<li class="{{ records.currentPage == page ? 'active' : null }}">
-			<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	{% endif %}
 </div>

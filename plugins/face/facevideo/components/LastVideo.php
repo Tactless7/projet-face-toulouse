@@ -19,16 +19,9 @@ class LastVideo extends ComponentBase
 	}
 	public function defineProperties(){
 
-		return[
-		'modelClass' =>[
-		'title' => 'face.faceVideo.components.FaceVideo'
-		'type'        => 'dropdown',
-		'showExternalParam' => false
+		
 
-
-		]
-
-		];
+	
 	}
 
 	public function onRun(){
@@ -40,7 +33,7 @@ class LastVideo extends ComponentBase
 
 	protected function loadLastVideo(){
 
-		return LastVideo::;
+
 
 	}
 
