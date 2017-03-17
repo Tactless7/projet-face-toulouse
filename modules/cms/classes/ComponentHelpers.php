@@ -1,7 +1,5 @@
 <?php namespace Cms\Classes;
-
 use Lang;
-
 /**
  * Defines some component helpers for the CMS UI.
  *
@@ -20,7 +18,6 @@ class ComponentHelpers
     public static function getComponentsPropertyConfig($component, $addAliasProperty = true, $returnArray = false)
     {
         $result = [];
-
         if ($addAliasProperty) {
             $property = [
                 'property'              => 'oc.alias',
@@ -34,7 +31,6 @@ class ComponentHelpers
             ];
             $result[] = $property;
         }
-
         $properties = $component->defineProperties();
         foreach ($properties as $name => $params) {
             $property = [
@@ -43,14 +39,12 @@ class ComponentHelpers
                 'type'                  => array_get($params, 'type', 'string'),
                 'showExternalParam'     => array_get($params, 'showExternalParam', true)
             ];
-
             foreach ($params as $name => $value) {
                 if (isset($property[$name])) {
                     continue;
                 }
                 $property[$name] = $value;
             }
-
             /*
              * Translate human values
              */
@@ -59,7 +53,6 @@ class ComponentHelpers
                 if (!in_array($name, $translate)) {
                     continue;
                 }
-
                 if (is_array($value)) {
                     array_walk($property[$name], function (&$_value, $key) {
                         $_value = Lang::get($_value);
@@ -69,16 +62,12 @@ class ComponentHelpers
                     $property[$name] = Lang::get($value);
                 }
             }
-
             $result[] = $property;
         }
-
         if ($returnArray)
             return $result;
-
         return json_encode($result);
     }
-
     /**
      * Returns a component property values.
      * @param mixed $component The component object
@@ -87,17 +76,13 @@ class ComponentHelpers
     public static function getComponentPropertyValues($component)
     {
         $result = [];
-
         $result['oc.alias'] = $component->alias;
-
         $properties = $component->defineProperties();
         foreach ($properties as $name => $params) {
             $result[$name] = $component->property($name);
         }
-
         return json_encode($result);
     }
-
     /**
      * Returns a component name.
      * @param mixed $component The component object
@@ -109,10 +94,8 @@ class ComponentHelpers
         $name = (isset($details['name']))
             ? $details['name']
             : 'cms::lang.component.unnamed';
-
         return Lang::get($name);
     }
-
     /**
      * Returns a component description.
      * @param mixed $component The component object
@@ -124,7 +107,6 @@ class ComponentHelpers
         $name = (isset($details['description']))
             ? $details['description']
             : 'cms::lang.component.no_description';
-
         return Lang::get($name);
     }
 }

@@ -17,16 +17,11 @@ class LastVideo extends ComponentBase
 
 		];
 	}
-	public function defineProperties(){
-
-		
-
 	
-	}
 
 	public function onRun(){
 
-		$this->lastVideos = $this->loadLastVideo();
+		
 	}
 
 
