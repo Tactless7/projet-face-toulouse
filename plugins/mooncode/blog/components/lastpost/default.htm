@@ -1,19 +1,17 @@
 {% set post = __SELF__.loadLastPost %}
 
-<!-- <div class="raw"></div>
-	<div class="col-md-4 col-md-offset-2"> -->
 		<h3 class="blogTitle-page-header"><a class= "titre" href="{{ post.url }}">{{ post.title }}</a></h3>
 		<p class="info">
-		                Publié 
-		                {% if post.categories.count %} in {% endif %}
-		                {% for category in post.categories %}
-		                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-		                {% endfor %}
-		                
-		                le {{ post.published_at|date('d M Y') }}
+		Publié 
+		<!-- {% if post.categories.count %} in {% endif %}
+		{% for category in post.categories %}
+		    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+		{% endfor %} -->
+
+		le {{ post.published_at|date('d M Y') }}
 		</p>
 		<p class="excerpt">{{ post.summary }}</p>
-        <a href="{{ post.url }}">Lire plus</a>
-  <!--   </div>
-</div>
- -->
+		<a href="{{ post.url }}">Lire plus</a>
+
+
+ 
