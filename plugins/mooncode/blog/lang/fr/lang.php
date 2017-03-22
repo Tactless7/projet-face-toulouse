@@ -117,6 +117,9 @@ return [
         'rssfeed_blog' => 'Page du blog',
         'rssfeed_blog_description' => 'Nom de la page principale du blog pour générer les liens. Cette propriété est utilisé par le composant dans le partial.',
         'rssfeed_title' => 'Flux RSS',
-        'rssfeed_description' => 'Génère un Flux RSS contenant les articles du blog.'
+        'rssfeed_description' => 'Génère un Flux RSS contenant les articles du blog.',
+        'lastpost_title' => 'Dernier article.',
+        'lastpost_description' => 'Affiche le tout dernier article'
+        
     ]
 ];

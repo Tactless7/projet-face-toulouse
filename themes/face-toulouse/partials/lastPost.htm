@@ -1,2 +1,19 @@
 [viewBag]
+snippetName = "lastPost"
 ==
+<?php
+function onInit() {
+        $posts = Mooncode\Blog\Models\Post::all()
+            ->orderBy('published_at', 'desc')->take(1)->get();
+        $title = $posts['title'];
+        $content = $posts['content'];
+        return $posts;
+}
+?>
+==
+{% for post in posts %}
+    <div class="col-sm-4 col-md-4">
+        <h4>{{ post.title }}</h4>
+        <div class="content">{{ post.content_html|raw }}</div>
+    </div>
+{% endfor %}

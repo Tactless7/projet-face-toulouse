@@ -27,7 +27,10 @@ class Plugin extends PluginBase
             'Mooncode\Blog\Components\Post'       => 'blogPost',
             'Mooncode\Blog\Components\Posts'      => 'blogPosts',
             'Mooncode\Blog\Components\Categories' => 'blogCategories',
-            'Mooncode\Blog\Components\RssFeed'    => 'blogRssFeed'
+            'Mooncode\Blog\Components\RssFeed'    => 'blogRssFeed',
+            'Mooncode\Blog\Components\Lastpost'   => 'blogLastpost'
+
+
         ];
     }
 
